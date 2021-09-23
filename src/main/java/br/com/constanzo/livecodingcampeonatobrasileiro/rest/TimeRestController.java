@@ -2,10 +2,12 @@ package br.com.constanzo.livecodingcampeonatobrasileiro.rest;
 
 import br.com.constanzo.livecodingcampeonatobrasileiro.dto.NovoTimeDTO;
 import br.com.constanzo.livecodingcampeonatobrasileiro.dto.TimeDTO;
+import br.com.constanzo.livecodingcampeonatobrasileiro.service.TimeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController

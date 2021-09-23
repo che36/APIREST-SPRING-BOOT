@@ -2,6 +2,7 @@ package br.com.constanzo.livecodingcampeonatobrasileiro.rest;
 
 import br.com.constanzo.livecodingcampeonatobrasileiro.dto.ClassificacaoDTO;
 import br.com.constanzo.livecodingcampeonatobrasileiro.dto.JogoDTO;
+import br.com.constanzo.livecodingcampeonatobrasileiro.service.JogoService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
