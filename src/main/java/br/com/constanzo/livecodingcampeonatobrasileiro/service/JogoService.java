@@ -92,7 +92,7 @@ public class JogoService {
     }
 
     public JogoDTO findById(Integer id) {
-        return entityToDTO(jogoRepository.findById(id).get());
+        return jogoRepository.findById(id).map(this::entityToDTO).orElse(null);
     }
 
     public List<JogoDTO> findAll() {
