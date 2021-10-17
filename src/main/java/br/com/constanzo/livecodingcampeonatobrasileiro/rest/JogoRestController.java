@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping(path = "/jogos")
@@ -34,7 +35,8 @@ public class JogoRestController {
     @ApiOperation(value = "Retorna um jogo específico")
     @GetMapping(value = "/{id}")
     public ResponseEntity<JogoDTO> findById(@PathVariable Integer id) {
-        return ResponseEntity.ok().body(jogoService.findById(id));
+        return Optional.ofNullable(jogoService.findById(id)).map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
     }
 
     @ApiOperation(value = "Retorna todos os jogos")
